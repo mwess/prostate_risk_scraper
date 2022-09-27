@@ -65,14 +65,14 @@ async def main(input_file: str, output_file: str, verbose: bool = False, with_sc
 
 
             # famhist
-            if row['fam_hist_imputed'] == 1:
+            if row['fam_hist']:
                 await page.locator("xpath=/html/body/div[1]/div/div[1]/form/div[4]/div/div/div[1]").press("ArrowDown")
                 await page.locator("xpath=/html/body/div[1]/div/div[1]/form/div[4]/div/div/div[1]").press("Enter")
 
             # Patient AA
-            #if row['Is patient AA'] != 'no':
-            #    await page.locator("xpath=/html/body/div[1]/div/div[1]/form/div[3]/div/div/div[1]").press("ArrowDown")
-            #    await page.locator("xpath=/html/body/div[1]/div/div[1]/form/div[3]/div/div/div[1]").press("Enter")
+            if row['Is patient AA'] != 'no':
+                await page.locator("xpath=/html/body/div[1]/div/div[1]/form/div[3]/div/div/div[1]").press("ArrowDown")
+                await page.locator("xpath=/html/body/div[1]/div/div[1]/form/div[3]/div/div/div[1]").press("Enter")
 
 
             await page.wait_for_timeout(2000);
