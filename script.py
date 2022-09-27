@@ -110,5 +110,4 @@ def parse_arguments():
         
 if __name__ == "__main__":
     args = parse_arguments()
-    print(args)
     asyncio.run(main(input_file=args.input, output_file=args.output, verbose=args.verbose, with_screenshot=args.screenshot))
